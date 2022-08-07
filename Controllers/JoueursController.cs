@@ -6,13 +6,13 @@ namespace RepartitionTournoi.Services.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class JoueurController : ControllerBase
+    public class JoueursController : ControllerBase
     {
 
-        private readonly ILogger<JoueurController> _logger;
+        private readonly ILogger<JoueursController> _logger;
         private readonly IJoueurDomain _joueurDomain;
 
-        public JoueurController(ILogger<JoueurController> logger, IJoueurDomain joueurDomain)
+        public JoueursController(ILogger<JoueursController> logger, IJoueurDomain joueurDomain)
         {
             _logger = logger;
             _joueurDomain = joueurDomain;
