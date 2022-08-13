@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using RepartitionTournoi.Domain;
+using RepartitionTournoi.Domain.Interfaces;
 using RepartitionTournoi.Models;
 
 namespace RepartitionTournoi.Services.Controllers

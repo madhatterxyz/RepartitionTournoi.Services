@@ -1,14 +1,14 @@
 using RepartitionTournoi.Domain;
+using RepartitionTournoi.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services
-            //.AddSingleton<ICompositionPresentation, CompositionPresentation>()
-            .AddScoped<ICompositionDomain, CompositionDomain>()
             .AddScoped<ITournoiDomain, TournoiDomain>()
             .AddScoped<IJoueurDomain, JoueurDomain>()
+            .AddScoped<IJeuDomain, JeuDomain>()
             .RegisterDALServices();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
