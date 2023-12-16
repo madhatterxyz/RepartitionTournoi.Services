@@ -19,9 +19,9 @@ namespace RepartitionTournoi.Services.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<JeuDTO>> GetAll()
+        public IEnumerable<JeuDTO> GetAll()
         {
-            return await _JeuDomain.GetAll();
+            return _JeuDomain.GetAll();
         }
         [HttpPost]
         public async Task<JeuDTO> Create(JeuDTO Jeu)

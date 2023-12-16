@@ -7,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
             .AddScoped<ITournoiDomain, TournoiDomain>()
+            .AddScoped<IMatchDomain, MatchDomain>()
             .AddScoped<IJoueurDomain, JoueurDomain>()
             .AddScoped<IJeuDomain, JeuDomain>()
+            .AddScoped<IScoreDomain, ScoreDomain>()
             .RegisterDALServices();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

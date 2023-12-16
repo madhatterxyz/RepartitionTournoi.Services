@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RepartitionTournoi.Domain.Interfaces;
-using RepartitionTournoi.Models;
+using RepartitionTournoi.Models.Tournoi;
 
 namespace RepartitionTournoi.Services.Controllers
 {
@@ -19,20 +19,25 @@ namespace RepartitionTournoi.Services.Controllers
         }
 
         [HttpGet]
-        public async Task<List<TournoiDTO>> All()
+        public List<TournoiDTO> All()
         {
-            return await _tournoiDomain.All();
+            return _tournoiDomain.All();
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task<TournoiDTO> Get(long id)
+        public TournoiDTO Get(long id)
         {
-            return await _tournoiDomain.GetById(id);
+            return _tournoiDomain.GetById(id);
         }
         [HttpPost]
-        public async Task<TournoiDTO> Create(TournoiDTO Tournoi)
+        public async Task<TournoiDTO> Create([FromBody]string nom)
         {
-            return await _tournoiDomain.Create(Tournoi.Nom);
+            return await _tournoiDomain.Create(nom);
+        }
+        [HttpPut]
+        public async Task Update([FromBody] EditTournoiDTO tournoi)
+        {
+            await _tournoiDomain.Update(tournoi);
         }
     }
 }
